@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    padding: 0px;
+    margin: 0px;
+    width: auto;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5em;
+}
+
+p {
+    margin: 15px 100px;
+}
+
+p, h2 {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*Página Inicial*/
+
+/*Slider*/
+
+.slide-controller:nth-child(1):checked ~ .slide-show .slides-list{--selected-item: 0;}
+.slide-controller:nth-child(2):checked ~ .slide-show .slides-list{--selected-item: 1;}
+.slide-controller:nth-child(3):checked ~ .slide-show .slides-list{--selected-item: 2;}
+.slide-controller:nth-child(4):checked ~ .slide-show .slides-list{--selected-item: 3;}
+
+.slide-show{
+  overflow: hidden;
+}
+
+.slides-list{
+  --selected-item: 0;
+  --total-items: 4;
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+  position: relative;
+  left: calc(var(--selected-item) * -100%);
+  width: calc(var(--total-items) * 100%);
+  transition: left 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+/*Descrição*/
+
+.linkint {
+    text-decoration: none;
+    color: darkslategray;
+}
+
+.linkint:hover {
+    color: darkgray;
+    text-decoration: underline;
+}
+
+/*Redes sociais*/
+
+
+.rede li {
+    display: inline-block;
+}
+
+/*Página de Sobre*/
+
+.comentario {
+    margin: 30px 0;
+}
+
+form {
+	margin: 40px;
+}
+
+form label, form legend {
+	display: flex;
+	margin: 0 0 10px ;
+    align-items: center;
+}
+
+fieldset {
+    border: none;
+}
+
+.input-padrao {
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 50%;
+}
+
+.enviar{
+	width: 40%;
+	padding: 15px 0;
+	background: #A65F37;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	transition: 1s all;
+	cursor: pointer;
+}
+
+.enviar:hover {
+	background: #73341D;
+	transform: scale(1.2);
+}
+
+/*Página Do cardápio*/
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .vitrine {
+    display: block;
+    margin: 50px auto;
+    max-width: 1300px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .product-list {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+    @media (max-width: 991px){
+      flex-wrap: wrap;
+    }
+  }
+  .product-item {
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+    margin: 15px 5px;
+    max-width: 300px;
+    transition: .2s;
+    width: 100%;
+
+    .product-info {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 100%;
+      
+      .tag-procent {
+        background: #f00;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 5px 15px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+    }
+    .product-info-img {
+      border-bottom: 1px solid #e1e1e1;
+      height: 240px;
+      width: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: 200px;
+      }
+    } 
+    .product-info-description {
+      padding: 15px;
+      .title {
+        font-size: 13px;
+        margin: 0;
+        padding: 0;
+      }
+      .description {
+        height: 500px;
+        margin: 3px 0;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        overflow: hidden;
+  
+      }
+    }
+    .price-box {
+      align-items: center;
+      border-top: 1px solid #e1e1e1;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      
+    }
+    .price {
+      del{
+        color: #ccc;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+      ins {
+        color: #73341D;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none; 
+      }
+  
+      .price-info {
+        color: #73341D;
+        display: block;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+    }
+    .star-ranking {
+      display: flex;
+      margin-top: 10px;
+      img {
+        max-width: 15px;
+      }
+    }
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow:  -2px 48px 56px -41px rgba(0,0,0,0.37);
+    }
+   
+  }
+  
+
+  @media only screen and (max-width: 480px) {
+
+	body {
+		height: auto;
+		max-width: 480px;
+		text-align: center;
+		font-size: 1em;
+		overflow-x: hidden;
+	}
+
+	p {
+        margin: 15px 30px;
+    }
+
+    .slide img {
+        width: 85%;
+        height: auto;
+    }
+}
